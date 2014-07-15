@@ -1,4 +1,4 @@
-package Game;
+package DopeNerdInc.CoolGame;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

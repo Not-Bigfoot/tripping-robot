@@ -1,4 +1,4 @@
-package Game;
+package DopeNerdInc.CoolGame;
 
 /**
  * Hello world!
