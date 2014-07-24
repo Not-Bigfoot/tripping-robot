@@ -8,16 +8,22 @@ import javax.imageio.ImageIO;
 
 public abstract class WorldObject
 {
-	private final int FRAMES = 3;
+	//TBD
+	protected static final String ROOT_ANIMATION_FILE = "";
 	
-	private static int frame = 0;
-	private String imagesFilePath;
+	//Number of frames of animation
+	private int frames;
+	//Current frame
+	protected int frame;
+	protected String imagesFilePath;
 	private Point position;
 	
-	public WorldObject(String _imagesFilePath, Point _position)
+	public WorldObject(String _imagesFilePath, Point _position, int _frames)
 	{
 		imagesFilePath = _imagesFilePath;
 		position = _position;
+		frames = _frames;
+		frame = 0;
 	}
 	
 	public void setPosition(Point _position)
@@ -30,18 +36,20 @@ public abstract class WorldObject
 		return position;
 	}
 	
+	//Advances the animation frame
 	public void nextFrame()
 	{
-		if (frame > FRAMES - 1)
-		{
-			frame = 0;
-		}
-		else
+		if (frame < frames - 1)
 		{
 			frame++;
 		}
+		else
+		{
+			frame = 0;
+		}
 	}
 	
+	//Returns the animation for the current frame
 	public BufferedImage animate()
 	{
 		try
