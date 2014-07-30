@@ -1,8 +1,10 @@
 package DopeNerdInc.CoolGame;
 
+import java.io.IOException;
+
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws IOException
     {
     	//variables used for timing frames
     	boolean gameRunning = true;
@@ -37,7 +39,7 @@ public class App
         		//render
         		count ++;
         		System.out.println("Frame " + count);
-        		if (count >= 300)
+        		if (count >= 30)
         		{
         			gameRunning = false;
         			endTime = System.nanoTime();
@@ -46,5 +48,6 @@ public class App
         		timeSinceLastFrame = 0;
         	}
     	}
+        Room testRoom = new Room(0);
     }
 }
